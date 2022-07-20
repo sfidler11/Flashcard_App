@@ -4,7 +4,7 @@ function CardList({deck, cardCount, cards}){
     const [index, setIndex] = useState(0);
     const [flipSide, setFlipSide] = useState(false);
     
-    console.log(cards[index]);
+    console.log(cards[index].front);
     return (
         <div className="card-body">
             <div className="card-title">
