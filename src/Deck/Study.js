@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { readDeck } from "../utils/api";
 import { useParams } from "react-router-dom";
 import CardList from "../Cards/CardList";
+import { Link } from "react-router-dom";
 
 
 function Study() {
@@ -10,12 +11,13 @@ function Study() {
     const [cardCount, setCardCount] = useState(0);
     const { deckId } = useParams();
 
+    //loading the selected deck
     useEffect(() => {
-        const cardAbort = new AbortController();
+        const deckAbort = new AbortController();
 
         async function showCard() {
             try {
-                const cardList = await readDeck(deckId, cardAbort.signal);
+                const cardList = await readDeck(deckId, deckAbort.signal);
                 setDeck(cardList);
                 setCardCount(cardList.cards.length)
                 setCards(cardList.cards)
@@ -24,7 +26,7 @@ function Study() {
                 console.log("error creating card list");
             }
             return () => {
-                cardAbort.abort();
+                deckAbort.abort();
             }
         }
 
@@ -37,6 +39,20 @@ function Study() {
 
     return (
         <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <Link to="/">
+                            <span className="oi oi-home mx-1"></span>
+                            Home
+                        </Link>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <Link to={`/decks/${deck.id}`}>{deck.name}</Link>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Study</li>
+                </ol>
+            </nav>
             <h3>{deck.name}: Study</h3>
             <div> <CardList deck={deck} cardCount={cardCount} cards={cards}/> </div>
         </div>

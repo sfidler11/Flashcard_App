@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { listDecks } from "../utils/api";
+import DeckDelete from "../Delete/DeckDelete";
 
 function DeckList() {
     const [decks, setDecks] = useState([]);
@@ -29,35 +30,33 @@ function DeckList() {
     const printList = decks.map((deck) => {
         
         return (
-            <div class="border rounded p-2 my-2">
+            <div className="border rounded p-2 my-2">
                 <div>
                     <h3>{deck.name}
-                    <small class="float-right">{deck.cards.length} cards</small></h3>
+                    <small className="float-right">{deck.cards.length} cards</small></h3>
                 </div>
                 <div>
                     <p>{deck.description}</p>
                 </div>
                 <div>
-                    <button class="btn btn-secondary mx-1" onClick={() => history.push(`/decks/${deck.id}`)}>
+                    <button className="btn btn-secondary mx-1" onClick={() => history.push(`/decks/${deck.id}`)}>
                         <span className="oi oi-eye mx-1"></span>
                         View
                     </button>
-                    <button class="btn btn-primary" onClick={() => history.push(`/decks/${deck.id}/study`)}>
+                    <button className="btn btn-primary" onClick={() => history.push(`/decks/${deck.id}/study`)}>
                         <span className="oi oi-book mx-1"></span>
                         Study
                     </button>
-                    <button class="btn btn-danger float-right">
-                        <span className="oi oi-trash"></span>
-                    </button>
+                        <DeckDelete deckId={deck.id} />
                 </div>
             </div>
         )
     })
 
     return (
-        <>
+        <div className="decks">
             {printList}
-        </>
+        </div>
     )
 }
 
