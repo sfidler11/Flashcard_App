@@ -51,17 +51,17 @@ function EditDeck() {
         //the create deck form saves the data inputted by the form into data/db.json
         <div className="edit-deck">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
                         <Link to="/">
                             <span className="oi oi-home mx-1"></span>
                             Home
                         </Link>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">
+                    <li className="breadcrumb-item active" aria-current="page">
                         <Link to={`/decks/${deck.id}`}>{deck.name}</Link>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Edit Deck</li>
+                    <li className="breadcrumb-item active" aria-current="page">Edit Deck</li>
                 </ol>
             </nav>
             <h3>Edit: {deck.name}</h3>

@@ -23,16 +23,16 @@ function CreateDeck() {
     }
     return (
         //the create deck form saves the data inputted by the form into data/db.json
-        <div>
+        <div className="container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
                         <Link to="/">
                             <span className="oi oi-home mx-1"></span>
                             Home
                         </Link>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Create Deck</li>
+                    <li className="breadcrumb-item active" aria-current="page">Create Deck</li>
                 </ol>
             </nav>
             <h3>Create Deck</h3>

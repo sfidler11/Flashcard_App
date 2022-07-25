@@ -37,7 +37,7 @@ function Deck() {
         if(cardPull) {
         printCards = cardPull.map((card) => {
             return (
-                <div className="cards border rounded m-1">
+                <div className="cards border rounded m-1" key={card.id}>
                     <div className="m-1">
                         <p className="font-weight-bold">Front</p>
                         <p>{card.front}</p>
@@ -70,14 +70,14 @@ function Deck() {
     return (
         <div className="deck">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
                         <Link to="/">
                             <span className="oi oi-home mx-1"></span>
                             Home
                         </Link>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">{deck.name}</li>
+                    <li className="breadcrumb-item active" aria-current="page">{deck.name}</li>
                 </ol>
             </nav>
             <div className="header">

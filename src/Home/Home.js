@@ -14,7 +14,7 @@ function Home() {
                  Create Deck 
                  </button>
         
-        <DeckList />
+        <DeckList/>
     </div>
     )
 }

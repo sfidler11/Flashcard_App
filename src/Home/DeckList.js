@@ -30,7 +30,7 @@ function DeckList() {
     const printList = decks.map((deck) => {
         
         return (
-            <div className="border rounded p-2 my-2">
+            <div className="border rounded p-2 my-2" key={deck.id}>
                 <div>
                     <h3>{deck.name}
                     <small className="float-right">{deck.cards.length} cards</small></h3>
