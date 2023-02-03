@@ -8,6 +8,7 @@ The flashcard study app is a frontend study aid where students can create, edit,
 
 ## Technologies
 Javascript, React with React hooks, Bootstrap 4, HTML, CSS
+
 ![javascript logo](/images/JavaScript.png)
 ![react logo](/images/React.png)
 ![bootstrap logo](/images/bootstrap.png)
