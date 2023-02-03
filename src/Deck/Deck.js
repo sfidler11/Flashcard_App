@@ -65,8 +65,6 @@ function Deck() {
         printCards = "Loading";
     }
 
-    //console.log(deck);
-    //console.log(cardPull);
     return (
         <div className="deck">
             <nav aria-label="breadcrumb">

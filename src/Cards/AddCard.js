@@ -20,7 +20,6 @@ function AddCard() {
             try{
                 const pullDeck = await readDeck(deckId, deckAbort.signal);
                 setDeck(pullDeck);
-                //setCard(pullDeck.cards)
             }
             catch (error) {
                 console.log("error creating deck list");
@@ -37,7 +36,6 @@ function AddCard() {
     //when the form is saved, the card will be added to the deck and the user will be able to add new cards
     const handleSubmit = (event) => {
         event.preventDefault();
-        //console.log(front, back)
         createCard(deckId, {
             front: front,
             back: back,

@@ -33,10 +33,6 @@ function Study() {
         showCard();
     }, [deckId])
 
-    // console.log(deck);
-    // console.log(cardCount);
-    // console.log(deck.cards);
-
     return (
         <div>
             <nav aria-label="breadcrumb">
