@@ -48,12 +48,6 @@
       "id": 5
     },
     {
-      "front": "This is the front of the third card",
-      "back": "This is the back of the third card",
-      "deckId": 2,
-      "id": 9
-    },
-    {
       "front": "Fronty front front",
       "back": "Backy back back",
       "deckId": 1,
